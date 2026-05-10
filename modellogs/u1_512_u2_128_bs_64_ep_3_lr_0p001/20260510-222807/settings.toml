@@ -1,0 +1,30 @@
+[model]
+epochs = 3
+metrics = ["Accuracy"]
+logdir = "modellogs\u1_512_u2_128_bs_64_ep_3_lr_0p001"
+train_steps = 937
+valid_steps = 156
+reporttypes = ["ReportTypes.TENSORBOARD", "ReportTypes.TOML"]
+[model.optimizer_kwargs]
+lr = 0.001
+
+[model.scheduler_kwargs]
+factor = 0.1
+patience = 10
+
+[model.earlystop_kwargs]
+save = false
+verbose = true
+patience = 10
+
+
+[types]
+epochs = "int"
+metrics = "list"
+logdir = "WindowsPath"
+train_steps = "int"
+valid_steps = "int"
+reporttypes = "list"
+optimizer_kwargs = "dict"
+scheduler_kwargs = "dict"
+earlystop_kwargs = "dict"
